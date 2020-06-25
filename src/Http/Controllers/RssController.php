@@ -31,7 +31,7 @@ class RssController extends Controller
                                  </a>
                               </div>
                               <br />'.$summary;
-                $rss->additem($name,$description,$url,$url,date('d/m/Y h:i:s a',strtotime($v->created_at)));
+                $rss->additem($name,$description,$url,$url,date(DATE_RSS, strtotime($v->created_at)));
             }
         }
         header ("Content-Type:text/xml");
